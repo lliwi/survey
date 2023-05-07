@@ -1,0 +1,46 @@
+{% extends '/auth/base-auth.html' %}
+
+
+{% block content %}
+<header>
+    <div class="dropdown">
+        <span>|Menu|</span>
+        <div class="dropdown-content">
+            <a class="button " href="/"> <img src="{{ url_for('static', filename='images/logout.png') }}"
+                    width="20px" /></a>
+                    <a class="button " href="/info"> <img src="{{ url_for('static', filename='images/info.png') }}"
+                        width="20px" /></a>
+        </div>
+        
+    </div>
+    <div class="logo">
+        <h3> Survey login </h3>
+        <img src="{{ url_for('static', filename='images/logo.png') }}" width="150px" />
+    </div>
+</header>
+
+<div class="center">
+    <h1>Consulta</h1>
+    <h3>El voto relacionado con el UUID {{ user_uuid }} fue:</h3>
+    
+    <div class="survey-div">
+        <table class="survey-table">
+        <br>
+   
+            {% for question in vote %}
+
+            <label><strong>{{ question['question'] }}</strong></label>
+            <br>
+            <label>{{ question['answer'] }}</label>
+            <br>
+            <br>
+            {%endfor%}
+    </div>
+    <br><br>
+    <h4>La participación actual es del {{ statics_res['progress'] }} % sobre un total de {{ statics_res['participants'] }} participantes</h4>
+   
+
+
+</div>
+
+{% endblock %}

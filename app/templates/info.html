@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title%}{% endblock %}
+
+{% block content %}
+<header>
+    <div class="dropdown">
+        <span>|Menu|</span>
+        <div class="dropdown-content">
+            <a class="button " href="/"> <img src="{{ url_for('static', filename='images/logout.png') }}"
+                    width="20px" /></a>
+        </div>
+    </div>
+    <div class="logo">
+        <h3> Survey login </h3>
+        <img src="{{ url_for('static', filename='images/logo.png') }}" width="150px" />
+    </div>
+</header>
+<h1>¿Cómo funciona Surbey?</h1>
+<p>El sistema de consulta Surbey garantiza los tres pilares fundamentales de un sistema de votación: <strong>anonimato, trazabilidad y control del voto.</strong> </p>
+<h4>Control del voto</h4>
+<p>Se crea una marca de tiempo vinculará a cada usuario en el momento de realizar la votación, garantizando que este no se podrá emitir dos veces. </p>
+
+<h4>Anonimato</h4>
+<p>Para garantizar el anonimato se emplean dos tablas separadas, una contiene los usuarios, la segunda los votos realizados vinculados al uuid. Una vez se realiza el voto, el uuid de la tabla de usuarios es eliminado, haciendo imposible identificar qué usuario ha realizado cada uno de los votos. </p>
+
+<h4>Trazabilidad</h4>
+<p>A cada usuario se le proporciona un uuid al iniciar la votación, con él, es posible consultar tu votación para asegurar de que este se ha registrado de forma correcta. De otra parte los datos (anonimizados) son públicos, por lo que es posible auditar el proceso completo durante todo el proceso. </p>
+
+<h4>Flujo</h4>
+<p>El flujo que garantiza todo el proceso es el descrito en la siguiente imagen. </p>
+<img src="{{ url_for('static', filename='images/flux.png') }}" width="600px" />
+
+<h1>Resultados</h1>
+<p>Descarga los datos de la votación.</p>
+<a class="button download " href="/data"> <img src="{{ url_for('static', filename='images/report.png') }}" width="20px" /></a>
+
+
+
+<div><br><br></div>
+{% endblock %}

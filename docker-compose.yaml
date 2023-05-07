@@ -1,0 +1,42 @@
+version: "3.9"
+services:
+  survey:
+    ports:
+      - "8000:8000"
+    image: lliwi/survey:latest
+    environment:
+      - FLASK_DATABASE_HOST=localhost
+      - FLASK_DATABASE_USER=root
+      - FLASK_DATABASE_PASSWORD=example
+      - FLASK_DATABASE=survey
+      - FLASK_SECRET_KEY=yourseccret
+      - FLASK_LDAP_SERVER="localhost"
+      - FLASK_LDAP_ROOT_DN="dc=example,dc=org"
+      - FLASK_LDAP_USER=admin
+      - FLASK_LDAP_PASSWORD=admin
+
+    volumes:
+      - ./app:/code/app
+
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+    ports:
+      - 3306:3306
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+      
+  openldap:
+        image: osixia/openldap:1.2.4
+        container_name: my-openldap-container
+        restart: always
+        ports:
+            - '389:389'
+            - '636:636'

@@ -1,0 +1,43 @@
+{% extends '/auth/base-auth.html' %}
+
+
+{% block content %}
+
+<div class="center">
+    <h2>Información importante</h2>
+    <p>Este es tu uuid <b>{{ user_uuid }}</b> guardalo para poder consultar tu voto posteriormete. <br> Para garantizar la confidencialidad de la votación el uuid será el único metodo para la consulta de votos</p>
+
+    <h1>Encuesta</h1>
+    
+    <div class="survey-div">
+        <table class="survey-table">
+        <br>
+        <form method="post" action="/auth/vote">
+   
+            {% for question in questions %}
+            <tr>
+                <td></td>
+    
+            </tr>
+            <label for="{{ question['id'] }}">{{ question['txt'] }}</label>
+            <br>
+                {% for answer in answers %}
+                    {% if question['id'] == answer['question_id']%}
+                        <input type="radio" name="{{ question['id'] }}" required value="{{ answer['id'] }}">
+                        <label>{{ answer['txt'] }}</label>
+                        <br>
+                    {%endif%}
+                {%endfor%}
+                <br>
+            {% if not loop.last%}
+            {%endif%}
+            {%endfor%}
+        </table>
+        <input class="button resize" type="submit" value="Vote" />
+    </form>
+    </div>
+
+
+</div>
+
+{% endblock %}
