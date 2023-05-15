@@ -10,7 +10,7 @@ services:
       - FLASK_DATABASE_PASSWORD=example
       - FLASK_DATABASE=survey
       - FLASK_SECRET_KEY=yourseccret
-      - FLASK_LDAP_SERVER="localhost"
+      - FLASK_LDAP_SERVER=localhost
       - FLASK_LDAP_ROOT_DN="dc=example,dc=org"
       - FLASK_LDAP_USER=admin
       - FLASK_LDAP_PASSWORD=admin

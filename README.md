@@ -21,17 +21,18 @@ pip install –r requirements.txt 
 
 
 ```text 
-| Variable                                  | Descripción                                                 | 
-|------------------------------------------|̣̣̣--------------------------------------------------------------|
-|FLASK_DATABASE_HOST= MYSQL HOST           | IP de la base de datos mysql.                                |
-|FLASK_DATABASE_USER= MYSQL USER           | Usuario de la base de datos mysql.                           |
-|FLASK_DATABASE_PASSWORD= MYSQL PASSWORD   | Contraseña de la base de datos mysql.                        |
-|FLASK_DATABASE= DATABASE                  | Nombre de la base de datos mysql.                            |
-|FLASK_SECRET_KEY=YOUERSECRET              | Secreto para las sesiones http (valor aleatorio).            |
-|FLASK_LDAP_SERVER="localhost"             | Ip del servidor ldap                                         |
-|FLASK_LDAP_ROOT_DN="dc=example,dc=org"    | DN del grupo de ldap                                         |
-|FLASK_LDAP_USER=admin                     | Usuario para leer el ldap                                    |
-|FLASK_LDAP_PASSWORD=admin                 | Contraseña del usuario lpad                                  |
+| Variable                                     | Descripción                                                 | 
+|---------------------------------------------|̣̣̣--------------------------------------------------------------|
+|FLASK_DATABASE_HOST= MYSQL HOST              | IP de la base de datos mysql.                                |
+|FLASK_DATABASE_USER= MYSQL USER              | Usuario de la base de datos mysql.                           |
+|FLASK_DATABASE_PASSWORD= MYSQL PASSWORD      | Contraseña de la base de datos mysql.                        |
+|FLASK_DATABASE= DATABASE                     | Nombre de la base de datos mysql.                            |
+|FLASK_SECRET_KEY=YOUERSECRET                 | Secreto para las sesiones http (valor aleatorio).            |
+|FLASK_LDAP_SERVER="localhost"                | Ip del servidor ldap                                         |
+|FLASK_LDAP_ROOT_DN="dc=example,dc=org"       | DN del grupo de ldap                                         |
+|FLASK_LDAP_USER="cn=admin,dc=example,dc=org" | Usuario para leer el ldap                                    |
+|FLASK_LDAP_PASSWORD=admin                    | Contraseña del usuario lpad                                  |
+|FLASK_LDAP_ATTRIBUTE=sAMAccountName          | Atributo para identificar el usuario                         |
 |----------------------------------------------------------------------------------------------------------
 ```
 

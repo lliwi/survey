@@ -12,7 +12,10 @@ def create_app():
         DATABASE_USER=os.environ.get('FLASK_DATABASE_USER'),
         DATABASE=os.environ.get('FLASK_DATABASE'),
         LDAP_SERVER=os.environ.get('FLASK_LDAP_SERVER'),
-        LDAP_ROOT_DN=os.environ.get('FLASK_LDAP_ROOT_DN')
+        LDAP_ROOT_DN=os.environ.get('FLASK_LDAP_ROOT_DN'),
+        LDAP_USER=os.environ.get('FLASK_LDAP_USER'),
+        LDAP_PASSWORD=os.environ.get('FLASK_LDAP_PASSWORD'),
+        LDAP_ATTRIBUTE=os.environ.get('FLASK_LDAP_ATTRIBUTE')
 
     )
 
