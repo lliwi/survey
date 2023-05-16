@@ -12,8 +12,9 @@ services:
       - FLASK_SECRET_KEY=yourseccret
       - FLASK_LDAP_SERVER=localhost
       - FLASK_LDAP_ROOT_DN="dc=example,dc=org"
-      - FLASK_LDAP_USER=admin
+      - FLASK_LDAP_USER="cn=admin,dc=example,dc=org"
       - FLASK_LDAP_PASSWORD=admin
+      - FLASK_LDAP_ATTRIBUTE=cn
 
     volumes:
       - ./app:/code/app
